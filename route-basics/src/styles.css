@@ -1,0 +1,94 @@
+.rb-page {
+  padding: 0;
+}
+
+.rb-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem;
+  color: #e6edf3;
+}
+
+.rb-desc {
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.rb-desc code {
+  background: #21262d;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.rb-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.rb-nav a {
+  color: #58a6ff;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: rgba(88, 166, 255, 0.1);
+}
+
+.rb-nav a:hover {
+  background: rgba(88, 166, 255, 0.2);
+}
+
+.rb-nav a.active {
+  background: rgba(88, 166, 255, 0.25);
+  font-weight: 600;
+}
+
+.rb-block {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.rb-block h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #e6edf3;
+}
+
+.rb-block p {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: #8b949e;
+  line-height: 1.5;
+}
+
+.rb-block p:last-of-type {
+  margin-bottom: 0;
+}
+
+.rb-block code {
+  background: #21262d;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.rb-btn {
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  background: #21262d;
+  color: #e6edf3;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.rb-btn:hover {
+  background: #30363d;
+  border-color: #8b949e;
+}

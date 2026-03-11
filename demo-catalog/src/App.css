@@ -1,0 +1,7 @@
+.demo-catalog-standalone {
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+}
+.demo-catalog-standalone h1 {
+  margin-top: 0;
+}

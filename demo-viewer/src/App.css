@@ -1,0 +1,7 @@
+.demo-viewer-standalone {
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+}
+.demo-viewer-standalone h1 {
+  margin-top: 0;
+}

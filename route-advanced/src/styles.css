@@ -1,0 +1,110 @@
+.ra-page {
+  padding: 0;
+}
+
+.ra-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem;
+  color: #e6edf3;
+}
+
+.ra-desc {
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.ra-desc code {
+  background: #21262d;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.ra-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.ra-nav a {
+  color: #d29922;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: rgba(210, 153, 34, 0.12);
+}
+
+.ra-nav a:hover {
+  background: rgba(210, 153, 34, 0.22);
+}
+
+.ra-nav a.active {
+  background: rgba(210, 153, 34, 0.25);
+  font-weight: 600;
+}
+
+.ra-block {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.ra-block h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #e6edf3;
+}
+
+.ra-block p {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: #8b949e;
+  line-height: 1.5;
+}
+
+.ra-block p:last-of-type {
+  margin-bottom: 0;
+}
+
+.ra-block code {
+  background: #21262d;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.ra-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+  color: #8b949e;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.ra-input {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background: #0d1117;
+  color: #e6edf3;
+  width: 100%;
+  max-width: 280px;
+}
+
+.ra-hint {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #8b949e;
+}
+
+.ra-nested-child {
+  margin-top: 0.75rem;
+  border-left: 3px solid #d29922;
+}

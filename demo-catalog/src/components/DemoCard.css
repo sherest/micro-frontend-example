@@ -1,0 +1,45 @@
+.demo-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  background: #161b22;
+  color: #e6edf3;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.demo-card:hover {
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 1px #58a6ff;
+}
+
+.demo-card--selected {
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 2px #58a6ff;
+}
+
+.demo-card__category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8b949e;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.demo-card__title {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.demo-card__desc {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #8b949e;
+  line-height: 1.4;
+}
