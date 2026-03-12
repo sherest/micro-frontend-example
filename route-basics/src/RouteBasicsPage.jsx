@@ -18,7 +18,7 @@ function About() {
   return (
     <div className="rb-block">
       <h3>About</h3>
-      <p>You’re on <code>/route-basics/about</code> — a simple second route.</p>
+      <p>You're on <code>/route-basics/about</code> — a simple second route.</p>
     </div>
   );
 }
@@ -37,13 +37,25 @@ function Contact({ basePath }) {
   );
 }
 
-export default function RouteBasicsPage({ basePath = BASE }) {
+export default function RouteBasicsPage({ basePath = BASE, currentPath }) {
   const homeTo = basePath ? `/${basePath}` : "/";
   const aboutTo = basePath ? `/${basePath}/about` : "/about";
   const contactTo = basePath ? `/${basePath}/contact` : "/contact";
-  const homePath = basePath || "/";
-  const aboutPath = basePath ? `${basePath}/about` : "about";
-  const contactPath = basePath ? `${basePath}/contact` : "contact";
+
+  // When host passes currentPath, render by path so content always shows (avoids
+  // remote Routes not seeing host router context in Module Federation).
+  const renderContent = () => {
+    if (currentPath !== undefined && currentPath !== null) {
+      const base = basePath ? `/${basePath}` : "";
+      if (currentPath === base || currentPath === `${base}/`) return <Home />;
+      if (currentPath === `${base}/about`) return <About />;
+      if (currentPath === `${base}/contact`) return <Contact basePath={basePath} />;
+      return <Home />;
+    }
+    return null;
+  };
+
+  const usePathProp = currentPath !== undefined && currentPath !== null;
 
   return (
     <div className="rb-page">
@@ -51,16 +63,20 @@ export default function RouteBasicsPage({ basePath = BASE }) {
       <p className="rb-desc">Examples: <code>Link</code>, <code>Route</code>, <code>useNavigate</code>.</p>
 
       <nav className="rb-nav">
-        <Link to={homeTo} end>Home</Link>
+        <Link to={homeTo}>Home</Link>
         <Link to={aboutTo}>About</Link>
         <Link to={contactTo}>Contact</Link>
       </nav>
 
-      <Routes>
-        <Route path={homePath} element={<Home />} />
-        <Route path={aboutPath} element={<About />} />
-        <Route path={contactPath} element={<Contact basePath={basePath} />} />
-      </Routes>
+      {usePathProp ? (
+        renderContent()
+      ) : (
+        <Routes>
+          <Route path={basePath ? `/${basePath}` : "/"} element={<Home />} />
+          <Route path={basePath ? `/${basePath}/about` : "/about"} element={<About />} />
+          <Route path={basePath ? `/${basePath}/contact` : "/contact"} element={<Contact basePath={basePath} />} />
+        </Routes>
+      )}
     </div>
   );
 }

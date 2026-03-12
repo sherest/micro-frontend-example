@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useState } from "react";
-import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
 import "./style.css";
 
 const DemoGrid = lazy(() =>
@@ -34,6 +34,16 @@ const RouteAdvancedPage = lazy(() =>
 const fallback = (
   <div className="livedemos-remote-wrapper loading">Loading…</div>
 );
+
+function RouteBasicsPageWithPath() {
+  const { pathname } = useLocation();
+  return <RouteBasicsPage basePath="route-basics" currentPath={pathname} />;
+}
+
+function RouteAdvancedPageWithPath() {
+  const { pathname } = useLocation();
+  return <RouteAdvancedPage basePath="route-advanced" currentPath={pathname} />;
+}
 
 function DemosPage({ selectedDemoId, setSelectedDemoId }) {
   return (
@@ -90,7 +100,7 @@ export default function App() {
               path="/route-basics/*"
               element={
                 <Suspense fallback={fallback}>
-                  <RouteBasicsPage />
+                  <RouteBasicsPageWithPath />
                 </Suspense>
               }
             />
@@ -98,7 +108,7 @@ export default function App() {
               path="/route-advanced/*"
               element={
                 <Suspense fallback={fallback}>
-                  <RouteAdvancedPage />
+                  <RouteAdvancedPageWithPath />
                 </Suspense>
               }
             />
