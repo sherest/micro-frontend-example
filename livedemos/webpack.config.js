@@ -9,7 +9,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
-    publicPath: "auto",
+    // Use root so scripts load correctly on direct/refresh of deep routes (e.g. /route-advanced/nested)
+    publicPath: "/",
   },
   devServer: {
     static: { directory: path.resolve(__dirname, "dist") },
